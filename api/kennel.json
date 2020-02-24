@@ -1,0 +1,43 @@
+{
+    "animals": [
+        { "id": 1, "name": "Doodles", "breed": "Poodle"},
+        { "id": 2, "name": "Decker", "breed": "German Shepherd" },
+        { "id": 3, "name": "Esme", "breed": "Pitbull" }
+    ],
+    "owners": [
+        {"id": 1,
+        "name": "Susan",
+        "phoneNumber": "542-8673",
+        "picFileLocation": "./Susan pic.jpg"
+        },
+        {"id": 2,
+        "name": "Ron",
+        "phoneNumber": "542-8280",
+        "picFileLocation": "./Ronpic.jpg"
+        }
+    ],
+    "locations": [
+        {
+            "id": 1,
+            "name": "Nashville Branch",
+            "picFileLocation": "./nashville pic.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Franklin Branch",
+            "picFileLocation": "./franklin pic.jpeg"
+        }
+    ],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Angie",
+            "picFileLocation": "./Angie.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Rosa",
+            "picFileLocation": "./Rosa.jpg"
+        }
+    ]
+}
