@@ -5,7 +5,7 @@ import LocationManager from '../../modules/LocationManager';
 
 const LocationList = () => {
   // The initial state is an empty array
-  const [locations, setLocations] = useState([]);
+  const [location, setLocations] = useState([]);
 
   const getLocations = () => {
     
@@ -27,7 +27,7 @@ const LocationList = () => {
   
   return (
     <div className="container-cards">
-      {locations.map(location => <LocationCard key={location.id} location={location} deleteLocation={deleteLocation}/>)}
+      {location.map(location => <LocationCard key={location.id} location={location} deleteLocation={deleteLocation}/>)}
     </div>
   );
 };

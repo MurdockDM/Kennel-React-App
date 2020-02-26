@@ -14,6 +14,16 @@
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull"
+    },
+    {
+      "id": 4,
+      "name": "Moose",
+      "breed": "Weimaraner"
+    },
+    {
+      "id": 5,
+      "name": "Lucy",
+      "breed": "Schnauzer"
     }
   ],
   "owners": [
