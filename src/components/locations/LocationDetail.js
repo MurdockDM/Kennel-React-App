@@ -5,16 +5,16 @@ import "./LocationDetail.css";
 
 
 const LocationDetail = props => {
-  const [location, setLocations] = useState({ name: "", picFileLocation: ""});
+  const [location, setLocations] = useState({ name: "", picFileLocation: "" });
   const [isLoading, setIsLoading] = useState(true);
-  
+
   const handleDelete = () => {
     setIsLoading(true);
     LocationManager.delete(props.locationId).then(() =>
       props.history.push("/locations")
     );
   };
-  
+
   useEffect(() => {
     LocationManager.get(props.locationId).then(location => {
       setLocations({
