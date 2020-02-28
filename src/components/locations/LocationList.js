@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import LocationCard from './LocationCard';
 import LocationManager from '../../modules/LocationManager';
 
-const LocationList = () => {
+const LocationList = (props) => {
   // The initial state is an empty array
   const [location, setLocations] = useState([]);
 
@@ -26,9 +26,18 @@ const LocationList = () => {
 
   
   return (
-    <div className="container-cards">
-      {location.map(location => <LocationCard key={location.id} location={location} deleteLocation={deleteLocation}/>)}
-    </div>
+    <React.Fragment>
+      <section className="section-content">
+          <button type="button"
+            className="btn"
+            onClick={() => { props.history.push("/location/new") }}>
+            Add Location
+          </button>
+      </section>
+      <div className="container-cards">
+        {location.map(location => <LocationCard key={location.id} location={location} deleteLocation={deleteLocation}/>)}
+      </div>
+    </React.Fragment>  
   );
 };
 export default LocationList
