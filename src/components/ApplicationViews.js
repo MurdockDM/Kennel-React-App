@@ -22,10 +22,10 @@ const ApplicationViews = () => {
     <React.Fragment>
       <Route path="/login" component={Login} />
       <Route
-        exact
-        path="/"
+        exact strict
+        path="/home"
         render={props => {
-          return <Home />;
+          return <Home {...props}/>;
         }}
       />
       <Route path="/animals/new" render={(props) => {
