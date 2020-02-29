@@ -5,12 +5,12 @@ import LocationManager from '../../modules/LocationManager';
 
 const LocationList = (props) => {
   // The initial state is an empty array
-  const [location, setLocations] = useState([]);
+  const [kennelLocation, setLocations] = useState([]);
 
   const getLocations = () => {
-    
+
     return LocationManager.getAll().then(locationsFromAPI => {
-        setLocations(locationsFromAPI)
+      setLocations(locationsFromAPI)
     });
   };
 
@@ -19,25 +19,25 @@ const LocationList = (props) => {
       .then(() => LocationManager.getAll().then(setLocations));
   };
 
-  
+
   useEffect(() => {
     getLocations();
   }, []);
 
-  
+
   return (
     <React.Fragment>
       <section className="section-content">
-          <button type="button"
-            className="btn"
-            onClick={() => { props.history.push("/location/new") }}>
-            Add Location
+        <button type="button"
+          className="btn"
+          onClick={() => { props.history.push("/location/new") }}>
+          Add Location
           </button>
       </section>
       <div className="container-cards">
-        {location.map(location => <LocationCard key={location.id} location={location} deleteLocation={deleteLocation}/>)}
+        {kennelLocation.map(kennelLocation => <LocationCard key={kennelLocation.id} kennelLocation={kennelLocation} deleteLocation={deleteLocation} {...props} />)}
       </div>
-    </React.Fragment>  
+    </React.Fragment>
   );
 };
 export default LocationList

@@ -2,7 +2,7 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodles",
+      "name": "Doodle",
       "breed": "Poodle"
     },
     {
@@ -36,7 +36,6 @@
     {
       "id": 2,
       "name": "Ron",
-      "phoneNumber": "542-8280",
       "picFileLocation": "./Ronpic.jpg"
     }
   ],
@@ -44,12 +43,12 @@
     {
       "id": 1,
       "name": "Nashville Branch",
-      "picFileLocation": "./nashville pic.jpeg"
+      "picFileLocation": "./nashville_pic.jpeg"
     },
     {
       "id": 2,
       "name": "Franklin Branch",
-      "picFileLocation": "./franklin pic.jpeg"
+      "picFileLocation": "./franklin_pic.jpeg"
     }
   ],
   "employees": [
