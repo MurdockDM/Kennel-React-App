@@ -6,15 +6,19 @@ const LocationCard = (props) => {
         <div className="card">
             <div className="card-content">
                 <picture>
-                    <img src={require(`${props.location.picFileLocation}`)} alt={props.location.name} />
+                    <img src={require(`${props.kennelLocation.picFileLocation}`)} alt={props.kennelLocation.name} />
                 </picture>
                 <h3>
-                    Location: <span className="card-locationName">{props.location.name}</span>
+                    Location: <span className="card-locationName">{props.kennelLocation.name}</span>
                 </h3>
-                <Link to={`/locations/${props.location.id}`}>
+                <Link to={`/locations/${props.kennelLocation.id}`}>
                     <button>Details</button>
                 </Link>
-                <button type="button" onClick={() => props.deleteLocation(props.location.id)}>Close Location</button>
+                <button type="button"
+                    onClick={() => props.history.push(`/locations/${props.kennelLocation.id}/edit`)}>
+                    Edit
+                </button>
+                <button type="button" onClick={() => props.deleteLocation(props.kennelLocation.id)}>Close Location</button>
             </div>
         </div>
     )

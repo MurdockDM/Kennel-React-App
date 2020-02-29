@@ -20,5 +20,14 @@ export default {
         },
         body: JSON.stringify(newLocation)
     }).then(data => data.json())
-}
+  },
+  update(editedKennelLocation) {
+    return fetch(`${remoteURL}/locations/${editedKennelLocation.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedKennelLocation)
+    }).then(data => data.json());
+  }
 }

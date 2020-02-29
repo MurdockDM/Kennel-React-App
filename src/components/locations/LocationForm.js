@@ -3,11 +3,11 @@ import LocationManager from '../../modules/LocationManager';
 import "./LocationForm.css"
 
 const LocationForm = props => {
-  const [location, setLocation] = useState({ name: "", picFileLocation: "./default pic.jpeg"});
+  const [kennelLocation, setLocation] = useState({ name: "", picFileLocation: "./default_pic.jpeg"});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
-    const stateToChange = { ...location };
+    const stateToChange = { ...kennelLocation };
     stateToChange[evt.target.id] = evt.target.value;
     setLocation(stateToChange);
   };
@@ -15,18 +15,18 @@ const LocationForm = props => {
 
   const constructNewLocation = evt => {
     evt.preventDefault();
-    if (location.name === "") {
-      window.alert("Please input an location name");
+    if (kennelLocation.name === "") {
+      window.alert("Please input an kennelLocation name");
     } else {
       setIsLoading(true);
       
-      LocationManager.post(location)
+      LocationManager.post(kennelLocation)
         .then(() => props.history.push("/locations"));
     }
   };
 
 //   const imageUpload = event => {
-//     const stateToChange = {...location}
+//     const stateToChange = {...kennelLocation}
 //     stateToChange[event.target.id] = event.target.files[0].path
 //     setLocation(stateToChange)
 //   }

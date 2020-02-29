@@ -5,7 +5,7 @@ import "./LocationDetail.css";
 
 
 const LocationDetail = props => {
-  const [location, setLocations] = useState({ name: "", picFileLocation: "" });
+  const [kennelLocation, setLocations] = useState({ name: "", picFileLocation: "" });
   const [isLoading, setIsLoading] = useState(true);
 
   const handleDelete = () => {
@@ -16,10 +16,10 @@ const LocationDetail = props => {
   };
 
   useEffect(() => {
-    LocationManager.get(props.locationId).then(location => {
+    LocationManager.get(props.locationId).then(kennelLocation => {
       setLocations({
-        name: location.name,
-        picFileLocation: location.picFileLocation
+        name: kennelLocation.name,
+        picFileLocation: kennelLocation.picFileLocation
       });
       setIsLoading(false);
     });
@@ -29,10 +29,10 @@ const LocationDetail = props => {
     <div className="card">
       <div className="card-content">
         <picture>
-          {location.picFileLocation && <img src={require(`${location.picFileLocation}`)} alt={location.name} />}
+          {kennelLocation.picFileLocation && <img src={require(`${kennelLocation.picFileLocation}`)} alt={kennelLocation.name} />}
         </picture>
         <h3>
-          Name: <span style={{ color: "darkslategrey" }}>{location.name}</span>
+          Name: <span style={{ color: "darkslategrey" }}>{kennelLocation.name}</span>
         </h3>
         <button type="button" disabled={isLoading} onClick={handleDelete}>
           Discharge
