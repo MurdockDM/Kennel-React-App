@@ -5,6 +5,7 @@ import Home from "./home/Home";
 import EmployeeList from "./employee/EmployeeList";
 import EmployeeForm from "./employee/EmployeeForm"
 import EmployeeEditForm from "./employee/EmployeeEditForm"
+import EmployeeWithAnimals from "./employee/EmployeeWithAnimals"
 import LocationList from "./locations/LocationList";
 import LocationDetail from "./locations/LocationDetail"
 import LocationForm from "./locations/LocationForm"
@@ -123,6 +124,9 @@ const ApplicationViews = () => {
           return <Redirect to="/login" />
         }
       }} />
+      <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+    return <EmployeeWithAnimals {...props} />
+}} />
     </React.Fragment>
   );
 };
