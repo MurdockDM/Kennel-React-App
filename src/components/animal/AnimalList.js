@@ -19,6 +19,7 @@ const AnimalList = (props) => {
     AnimalManager.delete(id)
       .then(() => AnimalManager.getAll().then(setAnimals));
   };
+  
 
   // got the animals from the API on the component's first render. this is
   // designated by the empty array
