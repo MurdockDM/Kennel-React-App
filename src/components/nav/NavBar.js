@@ -1,8 +1,8 @@
 import React from "react";
-import { NavLink, withRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = props => {
     return (
         <header>
             <h1 className="site-title">
@@ -16,46 +16,47 @@ const NavBar = () => {
                         <NavLink className="nav-link" to="/home" activeStyle={{
                             fontWeight: "bold",
                             color: "lime"
-                        }}>
-                            Home
-            </NavLink>
+                        }}></NavLink>
                     </li>
-                    <li>
-                        <NavLink className="nav-link" to="/animals" activeStyle={{
+                    {props.hasUser
+                        ? <li>
+                            <NavLink className="nav-link" to="/animals" activeStyle={{
                             fontWeight: "bold",
-                            color: "lime"
-                        }}>
-                            Animals
-            </NavLink>
-                    </li>
+                            color: "lime"}}> Animals</NavLink> 
+                        </li>
+                        : null}
                     <li>
                         <NavLink className="nav-link" to="/locations" activeStyle={{
                             fontWeight: "bold",
                             color: "lime"
-                        }}>
-                            Locations
-            </NavLink>
+                        }}> Locations </NavLink>
                     </li>
-                    <li>
-                        <NavLink className="nav-link" to="/employees" activeStyle={{
+                    {props.hasUser
+                        ? <li>
+                            <NavLink className="nav-link" to="/employees" activeStyle={{
                             fontWeight: "bold",
                             color: "lime"
-                        }}>
-                            Employees
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink className="nav-link" to="/owner" activeStyle={{
+                        }}> Employees </NavLink>
+                        </li>
+                        : null}
+                    {props.hasUser
+                        ? <li>
+                            <NavLink className="nav-link" to="/owner" activeStyle={{
                             fontWeight: "bold",
                             color: "lime"
-                        }}>
-                            Owners
-                        </NavLink>
-                    </li>
+                        }}> Owners </NavLink>
+                        </li>
+                        : null}
+                    {!props.hasUser
+                        ? <li>
+                            <NavLink className="nav-link" to="/login"> Login </NavLink>
+                        </li>
+                        : null}
                 </ul>
             </nav>
         </header>
     );
 };
 
-export default withRouter(NavBar);
+export default NavBar;
+
