@@ -2,28 +2,33 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodle",
-      "breed": "Poodle"
+      "name": "Doodles",
+      "breed": "Poodle",
+      "employeeId": 2
     },
     {
       "id": 2,
       "name": "Decker",
-      "breed": "German Shepherd"
+      "breed": "German Shepherd",
+      "employeeId": 2
     },
     {
       "id": 3,
       "name": "Esme",
-      "breed": "Pitbull"
+      "breed": "Pitbull",
+      "employeeId": 1
     },
     {
       "id": 4,
       "name": "Moose",
-      "breed": "Weimaraner"
+      "breed": "Weimaraner",
+      "employeeId": 2
     },
     {
       "id": 5,
       "name": "Lucy",
-      "breed": "Schnauzer"
+      "breed": "Schnauzer",
+      "employeeId": 1
     }
   ],
   "owners": [
@@ -55,12 +60,14 @@
     {
       "id": 1,
       "name": "Angie",
-      "picFileLocation": "./Angie.jpg"
+      "picFileLocation": "./Angie.jpg",
+      "locationId": 1
     },
     {
       "id": 2,
       "name": "Rosa",
-      "picFileLocation": "./Rosa.jpg"
+      "picFileLocation": "./Rosa.jpg",
+      "locationId": 2
     }
   ]
 }

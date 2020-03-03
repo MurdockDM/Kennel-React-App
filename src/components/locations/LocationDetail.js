@@ -10,20 +10,20 @@ const LocationDetail = props => {
 
   const handleDelete = () => {
     setIsLoading(true);
-    LocationManager.delete(props.locationId).then(() =>
+    LocationManager.delete(props.kennelLocationId).then(() =>
       props.history.push("/locations")
     );
   };
 
   useEffect(() => {
-    LocationManager.get(props.locationId).then(kennelLocation => {
+    LocationManager.get(props.kennelLocationId).then(kennelLocation => {
       setLocations({
         name: kennelLocation.name,
         picFileLocation: kennelLocation.picFileLocation
       });
       setIsLoading(false);
     });
-  }, [props.locationId]);
+  }, []);
 
   return (
     <div className="card">
