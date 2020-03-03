@@ -60,12 +60,14 @@
     {
       "id": 1,
       "name": "Angie",
-      "picFileLocation": "./Angie.jpg"
+      "picFileLocation": "./Angie.jpg",
+      "locationId": 1
     },
     {
       "id": 2,
       "name": "Rosa",
-      "picFileLocation": "./Rosa.jpg"
+      "picFileLocation": "./Rosa.jpg",
+      "locationId": 2
     }
   ]
 }

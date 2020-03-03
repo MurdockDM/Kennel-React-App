@@ -27,7 +27,6 @@ const AnimalList = (props) => {
     getAnimals();
   }, []);
 
-  // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
     <React.Fragment>
       <section className="section-content">

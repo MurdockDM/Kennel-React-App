@@ -13,7 +13,6 @@ const EmployeeWithAnimals = props => {
   };
 
   useEffect(() => {
-    //got here now make call to get employee with animal
     EmployeeManager.getWithAnimals(props.match.params.employeeId)
       .then(APIResult => {
         setEmployee(APIResult);

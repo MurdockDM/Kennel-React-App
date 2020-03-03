@@ -1,13 +1,12 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
-//only include these once they are built - previous practice exercise;
 import EmployeeList from "./employee/EmployeeList";
 import EmployeeForm from "./employee/EmployeeForm"
 import EmployeeEditForm from "./employee/EmployeeEditForm"
 import EmployeeWithAnimals from "./employee/EmployeeWithAnimals"
 import LocationList from "./locations/LocationList";
-import LocationDetail from "./locations/LocationDetail"
+import LocationWithEmployees from "./locations/LocationWithEmployees"
 import LocationForm from "./locations/LocationForm"
 import LocationEditForm from "./locations/LocationEditForm"
 import OwnerList from "./owner/OwnerList";
@@ -67,11 +66,6 @@ const ApplicationViews = () => {
           }
         }}
       />
-      <Route exact path="/locations/:locationId(\d+)" render={(props) => {
-        return <LocationDetail kennelLocationId={parseInt(props.match.params.kennelLocationId)}
-          {...props} />
-      }}
-      />
       <Route path="/locations/:kennelLocationId(\d+)/edit" render={props => {
         if (isAuthenticated()) {
           return <LocationEditForm {...props} />
@@ -82,6 +76,9 @@ const ApplicationViews = () => {
       <Route path="/location/new" render={(props) => {
         return <LocationForm {...props} />
       }} />
+      <Route path="/locations/:locationId(\d+)" render={(props) => {
+    return <LocationWithEmployees kennelLocationId={parseInt(props.match.params.locationId)} {...props} />
+}} />
       <Route
         exact
         path="/owner"
